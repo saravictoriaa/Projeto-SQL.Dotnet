@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geraÁ„o: 12/11/2024 ‡s 23:38
--- Vers„o do servidor: 10.4.32-MariaDB
--- Vers„o do PHP: 8.2.12
+-- Tempo de gera√ß√£o: 12/11/2024 √†s 23:38
+-- Vers√£o do servidor: 10.4.32-MariaDB
+-- Vers√£o do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cliente` (
   `id_cliente` int(11) NOT NULL,
-  `nome` int(45) NOT NULL,
-  `endereco` int(45) NOT NULL
+  `nome` varchar(45) NOT NULL,
+  `endereco` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -42,11 +42,11 @@ INSERT INTO `cliente` (`id_cliente`, `nome`, `endereco`) VALUES
 (2, 0, 0);
 
 --
--- Õndices para tabelas despejadas
+-- √çndices para tabelas despejadas
 --
 
 --
--- Õndices de tabela `cliente`
+-- √çndices de tabela `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_cliente`);
