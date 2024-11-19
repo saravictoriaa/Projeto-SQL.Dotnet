@@ -1,3 +1,5 @@
+using aula29._10.bd_;
+
 namespace aula29._10
 {
     internal static class Program
@@ -14,4 +16,6 @@ namespace aula29._10
             Application.Run(new Form1());
         }
     }
+
+   
 }

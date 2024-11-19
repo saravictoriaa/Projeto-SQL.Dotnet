@@ -34,12 +34,15 @@
             bt1save = new Button();
             txtendereco2 = new TextBox();
             txtbnome = new TextBox();
+            dgNomes = new DataGridView();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgNomes).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.WindowFrame;
+            panel1.Controls.Add(dgNomes);
             panel1.Controls.Add(lbl2end);
             panel1.Controls.Add(lbl1nm);
             panel1.Controls.Add(bt1save);
@@ -96,6 +99,15 @@
             txtbnome.Size = new Size(549, 27);
             txtbnome.TabIndex = 0;
             // 
+            // dgNomes
+            // 
+            dgNomes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgNomes.Location = new Point(45, 187);
+            dgNomes.Name = "dgNomes";
+            dgNomes.RowHeadersWidth = 51;
+            dgNomes.Size = new Size(677, 236);
+            dgNomes.TabIndex = 5;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -106,6 +118,7 @@
             Text = "Form1";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgNomes).EndInit();
             ResumeLayout(false);
         }
 
@@ -117,5 +130,6 @@
         private TextBox txtbnome;
         private Label lbl1nm;
         private Label lbl2end;
+        private DataGridView dgNomes;
     }
 }

@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
 
 namespace aula29._10.bd_
 {
     public class db_conf
     {
-        public static string conf = "server=localhost;userid=root;password=;database=mysqldotnet;";
+        public static string conf = "server=localhost;userid=root;password=;database=msqdotnet;";
 
         private MySqlConnection conexao = new MySqlConnection(conf);
 
@@ -44,7 +45,26 @@ namespace aula29._10.bd_
                 MessageBox.Show("Algo não correu como o esperado durante a conexão com o banco.", "OPSS");
             }
         }
-     
+
+        public MySqlDataAdapter SELECTGENERIC(string query)
+        {
+            MySqlCommand mySqlCommand = new MySqlCommand(query, conexao);
+            mySqlCommand.ExecuteNonQuery();
+            MySqlDataAdapter result = new MySqlDataAdapter(mySqlCommand);
+
+
+            try
+            {
+                conexao.Close();
+
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao buscar os dados no banco !\nSe essa maquina contem o servidor de dados tente reiniciar ela caso o contrario reinicei o servidor Se o erro persistir entre em contato com o desenvolvedor", "Erro");
+                conexao.Close();
+            }
+            return result;
+        }
 
     }
 }
