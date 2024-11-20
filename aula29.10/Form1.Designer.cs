@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            dgNomes = new DataGridView();
             lbl2end = new Label();
             lbl1nm = new Label();
             bt1save = new Button();
             txtendereco2 = new TextBox();
             txtbnome = new TextBox();
-            dgNomes = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgNomes).BeginInit();
             SuspendLayout();
@@ -53,6 +53,16 @@
             panel1.Size = new Size(776, 426);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
+            // 
+            // dgNomes
+            // 
+            dgNomes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgNomes.Location = new Point(45, 187);
+            dgNomes.Name = "dgNomes";
+            dgNomes.RowHeadersWidth = 51;
+            dgNomes.Size = new Size(677, 236);
+            dgNomes.TabIndex = 5;
+            dgNomes.CellContentClick += dgNomes_CellContentClick;
             // 
             // lbl2end
             // 
@@ -98,15 +108,6 @@
             txtbnome.Name = "txtbnome";
             txtbnome.Size = new Size(549, 27);
             txtbnome.TabIndex = 0;
-            // 
-            // dgNomes
-            // 
-            dgNomes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgNomes.Location = new Point(45, 187);
-            dgNomes.Name = "dgNomes";
-            dgNomes.RowHeadersWidth = 51;
-            dgNomes.Size = new Size(677, 236);
-            dgNomes.TabIndex = 5;
             // 
             // Form1
             // 

@@ -26,8 +26,9 @@ namespace aula29._10
                 MessageBox.Show("Nenhum campo pode ficar vazio");
                 return;
             }
-            string INSERT = "INSERT INTO cliente( nome, endereco) VALUES('"+nome+"','"+endereco+"')";
+            string INSERT = "INSERT INTO cliente( nome, endereco) VALUES('" + nome + "','" + endereco + "')";
             opconn.INSEREGENERIC(INSERT);
+            Plista();
 
         }
 
@@ -66,8 +67,25 @@ namespace aula29._10
             {
                 MessageBox.Show("Erro ao carregar os dados da tabela usuario", "ERRO");
             }
-            
-           
+
+
+        }
+
+        public int codigo;
+        public string Nome;
+        public string endereco;
+
+        private void dgNomes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgNomes.Rows[e.RowIndex];
+                codigo = Convert.ToInt32(row.Cells["Codigo"].Value.ToString());
+                Nome = row.Cells["Nome"].Value.ToString();
+                endereco = row.Cells["Endereco"].Value.ToString();
+                txtbnome.Text = Nome;
+                txtendereco2.Text = endereco;
+            }
         }
     }
 }
